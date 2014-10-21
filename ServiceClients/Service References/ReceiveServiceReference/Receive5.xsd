@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://aamva.org/xsd/nmvtis/exchange/puvi/2.3" elementFormDefault="qualified" targetNamespace="http://aamva.org/xsd/nmvtis/exchange/puvi/2.3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd2" namespace="http://niem.gov/niem/structures/2.0" />
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd6" namespace="http://aamva.org/xsd/aamva/extensionsExt/1.0" />
+  <xs:complexType name="PerformUsedVehicleInquiryResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://niem.gov/niem/structures/2.0" base="q1:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://aamva.org/xsd/aamva/extensionsExt/1.0" minOccurs="0" maxOccurs="1" ref="q2:NetworkControl" />
+          <xs:element xmlns:q3="http://aamva.org/xsd/aamva/extensionsExt/1.0" minOccurs="0" maxOccurs="unbounded" ref="q3:VehicleNoTitleHistory" />
+          <xs:element xmlns:q4="http://aamva.org/xsd/aamva/extensionsExt/1.0" minOccurs="0" maxOccurs="unbounded" ref="q4:VehicleDesignations" />
+          <xs:element xmlns:q5="http://aamva.org/xsd/aamva/extensionsExt/1.0" minOccurs="0" maxOccurs="1" ref="q5:TheftReport" />
+          <xs:element xmlns:q6="http://aamva.org/xsd/aamva/extensionsExt/1.0" minOccurs="0" maxOccurs="1" ref="q6:JurisdictionVehicle" />
+          <xs:element xmlns:q7="http://aamva.org/xsd/aamva/extensionsExt/1.0" minOccurs="0" maxOccurs="unbounded" ref="q7:Exception" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

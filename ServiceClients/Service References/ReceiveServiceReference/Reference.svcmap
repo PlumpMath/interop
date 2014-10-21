@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8d9ccfe1-a5a8-4751-b167-a3b2228e6eac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Receive.xsd" MetadataType="Schema" ID="f80166fb-513c-475e-8173-1bb4be993f89" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd2" />
+    <MetadataFile FileName="Receive1.xsd" MetadataType="Schema" ID="b6bbd531-a02e-431b-99ca-ac67abd74a7d" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd0" />
+    <MetadataFile FileName="Receive2.xsd" MetadataType="Schema" ID="8df8cc7e-569f-4e57-90c9-e4bae4a2bea5" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd6" />
+    <MetadataFile FileName="Receive3.xsd" MetadataType="Schema" ID="4c95c236-d33d-4535-bab6-9063e9194412" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd10" />
+    <MetadataFile FileName="Receive4.xsd" MetadataType="Schema" ID="48a27c99-ca07-46e2-bc12-adfa4a65ca75" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd4" />
+    <MetadataFile FileName="Receive5.xsd" MetadataType="Schema" ID="e0a80203-e7c2-42cf-aab3-48c13acef92a" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd9" />
+    <MetadataFile FileName="Receive6.xsd" MetadataType="Schema" ID="646cd941-0035-4f3d-9c3b-89de381a2adf" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd5" />
+    <MetadataFile FileName="Receive7.xsd" MetadataType="Schema" ID="7ba0185a-ed65-409a-a531-0d241cd9957e" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd3" />
+    <MetadataFile FileName="Receive8.xsd" MetadataType="Schema" ID="7cdd622c-eca1-4a92-ac79-49b1c1f53811" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd1" />
+    <MetadataFile FileName="Receive9.xsd" MetadataType="Schema" ID="3df7b48a-1bb6-4651-bdd4-930ab5359408" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd7" />
+    <MetadataFile FileName="Receive10.xsd" MetadataType="Schema" ID="9fd1262f-394e-4e24-b83e-19e80e69f8a4" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd8" />
+    <MetadataFile FileName="Receive.wsdl" MetadataType="Wsdl" ID="ffa54066-6bb0-4074-b923-fcd7b2cf4b5f" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?wsdl=wsdl0" />
+    <MetadataFile FileName="NmvtisReceiveResponses.wsdl" MetadataType="Wsdl" ID="88fd3f89-6950-4f4c-af0f-58809abe5ebf" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?wsdl" />
+    <MetadataFile FileName="Receive.disco" MetadataType="Disco" ID="19c7f7a0-24c9-4e0b-91c1-f38f59680037" SourceId="1" SourceUrl="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

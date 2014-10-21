@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://niem.gov/niem/proxy/xsd/2.0" elementFormDefault="qualified" targetNamespace="http://niem.gov/niem/proxy/xsd/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="string">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="boolean">
+    <xs:simpleContent>
+      <xs:extension base="xs:boolean" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="date">
+    <xs:simpleContent>
+      <xs:extension base="xs:date" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="gYear">
+    <xs:simpleContent>
+      <xs:extension base="xs:gYear" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="decimal">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="dateTime">
+    <xs:simpleContent>
+      <xs:extension base="xs:dateTime" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="nonNegativeInteger">
+    <xs:simpleContent>
+      <xs:extension base="xs:nonNegativeInteger" />
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

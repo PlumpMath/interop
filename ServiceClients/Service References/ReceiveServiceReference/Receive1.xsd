@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="AAMVA.NMVTIS" elementFormDefault="qualified" targetNamespace="AAMVA.NMVTIS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd1" namespace="http://aamva.org/xsd/nmvtis/exchange/pvhi/3.1" />
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd9" namespace="http://aamva.org/xsd/nmvtis/exchange/puvi/2.3" />
+  <xs:element name="VehicleHistoryInquiryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="authToken" type="xs:base64Binary" />
+        <xs:element minOccurs="0" maxOccurs="1" name="corrToken" type="xs:string" />
+        <xs:element xmlns:q1="http://aamva.org/xsd/nmvtis/exchange/pvhi/3.1" minOccurs="0" maxOccurs="1" name="response" type="q1:PerformVehicleHistoryInquiryResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleHistoryInquiryResponseResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="UsedVehicleInquiryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="authToken" type="xs:base64Binary" />
+        <xs:element minOccurs="0" maxOccurs="1" name="corrToken" type="xs:string" />
+        <xs:element xmlns:q2="http://aamva.org/xsd/nmvtis/exchange/puvi/2.3" minOccurs="0" maxOccurs="1" name="response" type="q2:PerformUsedVehicleInquiryResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UsedVehicleInquiryResponseResponse">
+    <xs:complexType />
+  </xs:element>
+</xs:schema>

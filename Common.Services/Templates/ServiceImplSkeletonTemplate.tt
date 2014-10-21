@@ -1,0 +1,64 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+foreach(Type contractType in ContractTypes)
+{
+this.WriteLine(string.Format("using {0} = {1};", contractType.Name, contractType.FullName));
+}
+#>
+
+using System;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using Common.Services;
+using Common.Services.Templates;
+
+namespace <#= NameSpace #>
+{
+	
+	[ServiceBehavior(
+		Name = "<#= ServiceName #>",
+		InstanceContextMode = InstanceContextMode.PerCall,
+		AddressFilterMode = AddressFilterMode.Any)]
+	public partial class <#= ServiceName #> : <#= TypePrinter.ResolveTypeFullName(ContractTypes) #>
+	{
+		<#
+		foreach(Type contractType in ContractTypes)
+		{
+			foreach(MethodInfo method in contractType.GetMethods())
+			{
+				Type returnType = method.ReturnType;
+				ParameterInfo[] inputParameters = method.GetParameters();
+				StringBuilder sb=new StringBuilder();
+				// sb.AppendLine("[OperationContract(Name=\"" + method.Name + "\")]");
+				sb.AppendLine("[FaultContract(typeof(NotImplementedError))]");
+				sb.AppendFormat("public {0} {1}(", TypePrinter.ResolveTypeFullName(returnType), method.Name);
+				if(inputParameters.Length>0)
+				{
+					for(int i=0;i<inputParameters.Length;i++)
+					{
+						ParameterInfo arg = inputParameters[i];
+						sb.AppendFormat("{0} {1}", TypePrinter.ResolveTypeFullName(arg.ParameterType), arg.Name);
+						if(i<inputParameters.Length-1) sb.Append(", ");
+					}
+				}
+				sb.AppendLine(")");
+				sb.AppendLine("{");
+				sb.AppendLine("LogFactory.GetLog().Information(\"Enter "+method.Name+"\");");
+				sb.AppendLine("throw new FaultException(new FaultReason(\"Method " + method.Name + " Is Not implemented\"));");
+				sb.AppendLine("}");
+
+				this.Write(sb.ToString());
+			}
+		}
+			
+		#>
+
+	}
+}

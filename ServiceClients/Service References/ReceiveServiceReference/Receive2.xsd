@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://aamva.org/xsd/aamva/extensionsExt/1.0" elementFormDefault="qualified" targetNamespace="http://aamva.org/xsd/aamva/extensionsExt/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd2" namespace="http://niem.gov/niem/structures/2.0" />
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd4" namespace="http://niem.gov/niem/proxy/xsd/2.0" />
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd5" namespace="http://niem.gov/niem/niem-core/2.0" />
+  <xs:complexType name="LastUpdateType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://niem.gov/niem/structures/2.0" base="q1:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="NMVTISVINPointerTransactionCode" type="q2:string" />
+          <xs:element xmlns:q3="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="TransactionDate" type="q3:date" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HistoricTitleType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://niem.gov/niem/structures/2.0" base="q4:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q5:VehicleIdentification" />
+          <xs:element xmlns:q6="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q6:TitleIdentification" />
+          <xs:element xmlns:q7="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q7:TitleIssuingAuthorityName" />
+          <xs:element xmlns:q8="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="TitleIssueDate" type="q8:date" />
+          <xs:element xmlns:q9="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehicleOdometerReadingMeasure" type="q9:TextType" />
+          <xs:element xmlns:q10="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q10:VehicleOdometerReadingUnitCode" />
+          <xs:element xmlns:q11="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q11:VehicleMakeCode" />
+          <xs:element xmlns:q12="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q12:ItemModelYearDate" />
+          <xs:element xmlns:q13="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="JurisdictionTitlingKeyText" type="q13:TextType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LastUpdate" type="tns:LastUpdateType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VehicleType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://niem.gov/niem/structures/2.0" base="q14:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q15:VehicleIdentification" />
+          <xs:element xmlns:q16="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q16:VehicleMakeCode" />
+          <xs:element xmlns:q17="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q17:ItemModelYearDate" />
+          <xs:element xmlns:q18="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q18:TitleIdentification" />
+          <xs:element xmlns:q19="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="TitleIssueDate" type="q19:date" />
+          <xs:element xmlns:q20="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q20:TitleIssuingAuthorityName" />
+          <xs:element xmlns:q21="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehicleOdometerReadingMeasure" type="q21:TextType" />
+          <xs:element xmlns:q22="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q22:VehicleOdometerReadingUnitCode" />
+          <xs:element xmlns:q23="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="JurisdictionTitlingKeyText" type="q23:TextType" />
+          <xs:element xmlns:q24="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="NMVTISChangeStateOfTitleCode" type="q24:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TitleDataAvailableCode" type="tns:TitleDataAvailableCodeType" />
+          <xs:element xmlns:q25="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="NMVTISStateUpdateModeCode" type="q25:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoricTitle" type="tns:HistoricTitleType" />
+          <xs:element xmlns:q26="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="RecordFoundIndicator" type="q26:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LastUpdate" type="tns:LastUpdateType" />
+          <xs:element xmlns:q27="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="RecordMatchSequenceID" type="q27:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TitleDataAvailableCodeType">
+    <xs:simpleContent>
+      <xs:extension base="tns:TitleDataAvailableCodeSimpleType" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TitleDataAvailableCodeSimpleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A" />
+      <xs:enumeration value="P" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehiclesType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://niem.gov/niem/structures/2.0" base="q28:ComplexObjectType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Vehicle" type="tns:VehicleType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddressDataType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://niem.gov/niem/structures/2.0" base="q29:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="MessageOriginatorID" type="q30:TextType" />
+          <xs:element xmlns:q31="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="TransactionOriginatorID" type="q31:TextType" />
+          <xs:element xmlns:q32="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="DestinationID" type="q32:TextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NetworkContolType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://niem.gov/niem/structures/2.0" base="q33:ComplexObjectType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressData" type="tns:AddressDataType" />
+          <xs:element xmlns:q34="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="TransactionLocatorID" type="q34:TextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NetworkControl" type="tns:NetworkContolType" />
+  <xs:element name="Vehicles" type="tns:VehiclesType" />
+  <xs:element name="VehicleNoTitleHistory" type="tns:VehicleNoTitleHistoryType" />
+  <xs:complexType name="VehicleNoTitleHistoryType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://niem.gov/niem/structures/2.0" base="q35:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q36="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q36:VehicleIdentification" />
+          <xs:element xmlns:q37="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q37:VehicleMakeCode" />
+          <xs:element xmlns:q38="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q38:ItemModelYearDate" />
+          <xs:element xmlns:q39="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q39:TitleIdentification" />
+          <xs:element xmlns:q40="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="TitleIssueDate" type="q40:date" />
+          <xs:element xmlns:q41="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q41:TitleIssuingAuthorityName" />
+          <xs:element xmlns:q42="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehicleOdometerReadingMeasure" type="q42:TextType" />
+          <xs:element xmlns:q43="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q43:VehicleOdometerReadingUnitCode" />
+          <xs:element xmlns:q44="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="JurisdictionTitlingKeyText" type="q44:TextType" />
+          <xs:element xmlns:q45="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="NMVTISChangeStateOfTitleCode" type="q45:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TitleDataAvailableCode" type="tns:TitleDataAvailableCodeType" />
+          <xs:element xmlns:q46="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="NMVTISStateUpdateModeCode" type="q46:string" />
+          <xs:element xmlns:q47="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="RecordFoundIndicator" type="q47:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LastUpdate" type="tns:LastUpdateType" />
+          <xs:element xmlns:q48="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="RecordMatchSequenceID" type="q48:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VehicleDesignations" type="tns:VehicleDesignationsType" />
+  <xs:complexType name="VehicleDesignationsType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://niem.gov/niem/structures/2.0" base="q49:ComplexObjectType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleDesignation" type="tns:VehicleDesignationType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VehicleDesignationType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q50="http://niem.gov/niem/structures/2.0" base="q50:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q51="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q51:VehicleMakeCode" />
+          <xs:element xmlns:q52="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q52:ItemModelYearDate" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ObtainedFrom" type="tns:ObtainedFromType" />
+          <xs:element xmlns:q53="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehicleDispositionText" type="q53:TextType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BrandDesignation" type="tns:BrandDesignationType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InsuranceDesignation" type="tns:InsuranceDesignationType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="JunkSalvageDesignation" type="tns:JunkSalvageDesignationType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ReportingEntity" type="tns:ReportingEntityType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Amendments" type="tns:AmendmentsType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ObtainedFromType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q54="http://niem.gov/niem/structures/2.0" base="q54:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q55="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q55:PersonName" />
+          <xs:element xmlns:q56="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehicleObtainerFromText" type="q56:TextType" />
+          <xs:element xmlns:q57="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="VehicleObtainedDate" type="q57:date" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BrandDesignationType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q58="http://niem.gov/niem/structures/2.0" base="q58:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q59="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="VehicleBrandSalvagePercentage" type="q59:decimal" />
+          <xs:element xmlns:q60="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q60:VehicleBrandDamagePercentageCategoryCode" />
+          <xs:element xmlns:q61="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q61:VehicleBrandCode" />
+          <xs:element xmlns:q62="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="VehicleBrandDate" type="q62:date" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InsuranceDesignationType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q63="http://niem.gov/niem/structures/2.0" base="q63:ComplexObjectType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Owner" type="tns:OwnerType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OwnerType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q64="http://niem.gov/niem/structures/2.0" base="q64:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q65="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="EntityName" type="q65:TextType" />
+          <xs:element xmlns:q66="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q66:PersonName" />
+          <xs:element xmlns:q67="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="unbounded" ref="q67:StreetFullText" />
+          <xs:element xmlns:q68="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q68:LocationCityName" />
+          <xs:element xmlns:q69="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q69:LocationStateUSPostalServiceCode" />
+          <xs:element xmlns:q70="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q70:LocationPostalCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="JunkSalvageDesignationType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q71="http://niem.gov/niem/structures/2.0" base="q71:ComplexObjectType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="VehicleIntendedForExportCode" type="tns:VehicleIntendedForExportCodeType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TransferedTo" type="tns:TransferedToType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VehicleIntendedForExportCodeType">
+    <xs:simpleContent>
+      <xs:extension base="tns:VehicleIntendedForExportCodeSimpleType" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VehicleIntendedForExportCodeSimpleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Y" />
+      <xs:enumeration value="N" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TransferedToType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q72="http://niem.gov/niem/structures/2.0" base="q72:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q73="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="EntityName" type="q73:TextType" />
+          <xs:element xmlns:q74="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q74:PersonName" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReportingEntityType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q75="http://niem.gov/niem/structures/2.0" base="q75:ComplexObjectType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ReportingEntityCategoryCode" type="tns:ReportingEntityCategoryCodeType" />
+          <xs:element xmlns:q76="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q76:IdentificationID" />
+          <xs:element xmlns:q77="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="EntityName" type="q77:TextType" />
+          <xs:element xmlns:q78="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="unbounded" ref="q78:StreetFullText" />
+          <xs:element xmlns:q79="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q79:LocationCityName" />
+          <xs:element xmlns:q80="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q80:LocationStateUSPostalServiceCode" />
+          <xs:element xmlns:q81="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q81:LocationPostalCode" />
+          <xs:element xmlns:q82="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q82:TelephoneNumberFullID" />
+          <xs:element xmlns:q83="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q83:ContactEmailID" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReportingEntityCategoryCodeType">
+    <xs:simpleContent>
+      <xs:extension base="tns:ReportingEntityCategoryCodeSimpleType" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ReportingEntityCategoryCodeSimpleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="I" />
+      <xs:enumeration value="J" />
+      <xs:enumeration value="S" />
+      <xs:enumeration value="V" />
+      <xs:enumeration value="F" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AmendmentsType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q84="http://niem.gov/niem/structures/2.0" base="q84:ComplexObjectType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Amendment" type="tns:AmendmentType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AmendmentType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q85="http://niem.gov/niem/structures/2.0" base="q85:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q86="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="AmendmentReportLoadDate" type="q86:dateTime" />
+          <xs:element xmlns:q87="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="AmmendmentCommentText" type="q87:TextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TheftReport" type="tns:TheftReportType" />
+  <xs:complexType name="TheftReportType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q88="http://niem.gov/niem/structures/2.0" base="q88:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q89="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="TheftReportHolderJurisdicitonName" type="q89:TextType" />
+          <xs:element xmlns:q90="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="TheftReportHolderAgencyName" type="q90:TextType" />
+          <xs:element xmlns:q91="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="StatusDate" type="q91:date" />
+          <xs:element xmlns:q92="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="RecordExtraMatchIndicator" type="q92:boolean" />
+          <xs:element xmlns:q93="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="RecordPurgedIndicator" type="q93:boolean" />
+          <xs:element xmlns:q94="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehiclePartDescriptionText" type="q94:TextType" />
+          <xs:element xmlns:q95="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="VehiclePartIndicator" type="q95:boolean" />
+          <xs:element xmlns:q96="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="TheftReportCaseID" type="q96:TextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JurisdictionVehicle" type="tns:JurisdictionVehicleType" />
+  <xs:complexType name="JurisdictionVehicleType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q97="http://niem.gov/niem/structures/2.0" base="q97:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q98="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="VINIssuingJurisdictionName" type="q98:string" />
+          <xs:element xmlns:q99="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="VehicleBodyCategoryCode" type="q99:string" />
+          <xs:element xmlns:q100="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="JurisdictionTitlingKeyText" type="q100:TextType" />
+          <xs:element xmlns:q101="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehicleOdometerReadingMeasure" type="q101:TextType" />
+          <xs:element xmlns:q102="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q102:VehicleOdometerReadingUnitCode" />
+          <xs:element xmlns:q103="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="VehicleOdometerReadingDate" type="q103:date" />
+          <xs:element xmlns:q104="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q104:VehicleModelCode" />
+          <xs:element xmlns:q105="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q105:VehicleStyleCode" />
+          <xs:element xmlns:q106="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q106:VehicleVINAText" />
+          <xs:element xmlns:q107="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q107:ItemModelName" />
+          <xs:element xmlns:q108="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q108:VehicleColorPrimaryCode" />
+          <xs:element xmlns:q109="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q109:VehicleColorSecondaryCode" />
+          <xs:element xmlns:q110="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="VehicleNewCode" type="q110:string" />
+          <xs:element xmlns:q111="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q111:ItemLeaseIndicator" />
+          <xs:element xmlns:q112="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q112:ItemRentalIndicator" />
+          <xs:element xmlns:q113="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q113:ConveyanceFuelCategoryCode" />
+          <xs:element xmlns:q114="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q114:VehicleUseCode" />
+          <xs:element xmlns:q115="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q115:EngineCylinderQuantity" />
+          <xs:element xmlns:q116="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q116:VehicleDoorQuantity" />
+          <xs:element xmlns:q117="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q117:ItemOwnerAppliedID" />
+          <xs:element xmlns:q118="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q118:VehicleAxleQuantity" />
+          <xs:element xmlns:q119="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehicleUnladenWeightMeasure" type="q119:TextType" />
+          <xs:element xmlns:q120="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehicleGrossLadenSumWeightMeasure" type="q120:TextType" />
+          <xs:element xmlns:q121="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="VehicleMaximumLoadWeightMeasure" type="q121:TextType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="JurisdictionBrand" type="tns:JurisdictionBrandType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PreviousTitle" type="tns:PreviousTitleType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemOwnerNames" type="tns:ItemOwnerNamesType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Title" type="tns:TitleType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Lien" type="tns:LienType" />
+          <xs:element xmlns:q122="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q122:VehicleMakeCode" />
+          <xs:element xmlns:q123="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q123:ItemModelYearDate" />
+          <xs:element xmlns:q124="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="LienQuantity" type="q124:nonNegativeInteger" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="JurisdictionBrandType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q125="http://niem.gov/niem/structures/2.0" base="q125:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q126="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q126:VehicleBrandSalvagePercentage" />
+          <xs:element xmlns:q127="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q127:VehicleBrandDamagePercentageCategoryCode" />
+          <xs:element xmlns:q128="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q128:VehicleBranderIdentification" />
+          <xs:element xmlns:q129="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q129:VehicleBrandCode" />
+          <xs:element xmlns:q130="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="VehicleBrandDate" type="q130:date" />
+          <xs:element xmlns:q131="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="SequenceID" type="q131:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PreviousTitleType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q132="http://niem.gov/niem/structures/2.0" base="q132:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q133="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q133:TitleIdentification" />
+          <xs:element xmlns:q134="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q134:TitleIssuingAuthorityName" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ItemOwnerNamesType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q135="http://niem.gov/niem/structures/2.0" base="q135:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q136="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="ItemOwnerName" type="q136:ProperNameTextType" />
+          <xs:element xmlns:q137="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="SequenceID" type="q137:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TitleType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q138="http://niem.gov/niem/structures/2.0" base="q138:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q139="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q139:TitleIdentification" />
+          <xs:element xmlns:q140="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="TitleIssueDate" type="q140:date" />
+          <xs:element xmlns:q141="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q141:ItemTitleDocumentCategoryCode" />
+          <xs:element xmlns:q142="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q142:TitleIssuingAuthorityName" />
+          <xs:element xmlns:q143="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q143:TitleStatusCode" />
+          <xs:element xmlns:q144="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="StatusDate" type="q144:date" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LienType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q145="http://niem.gov/niem/structures/2.0" base="q145:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q146="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" name="LienholderAddress" type="q146:ProperNameTextType" />
+          <xs:element xmlns:q147="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="LienholderName" type="q147:string" />
+          <xs:element xmlns:q148="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q148:LienAmount" />
+          <xs:element xmlns:q149="http://niem.gov/niem/niem-core/2.0" minOccurs="0" maxOccurs="1" ref="q149:LienDate" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:ExceptionType" />
+  <xs:complexType name="ExceptionType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q150="http://niem.gov/niem/structures/2.0" base="q150:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q151="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionID" type="q151:string" />
+          <xs:element xmlns:q152="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionText" type="q152:string" />
+          <xs:element xmlns:q153="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionTypeCode" type="q153:string" />
+          <xs:element xmlns:q154="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionSevereIndicator" type="q154:boolean" />
+          <xs:element xmlns:q155="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionCategoryCode" type="q155:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ExceptionElement" type="tns:ExceptionElementType" />
+          <xs:element xmlns:q156="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="unbounded" name="ExceptionObjectText" type="q156:string" />
+          <xs:element xmlns:q157="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionActorText" type="q157:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Reference" type="q150:ReferenceType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExceptionElementType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q158="http://niem.gov/niem/structures/2.0" base="q158:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q159="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionElementTagText" type="q159:string" />
+          <xs:element xmlns:q160="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionElementOccurrenceID" type="q160:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

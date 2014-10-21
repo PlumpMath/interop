@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://aamva.org/xsd/aamva/exception/1.0" elementFormDefault="qualified" targetNamespace="http://aamva.org/xsd/aamva/exception/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd2" namespace="http://niem.gov/niem/structures/2.0" />
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd4" namespace="http://niem.gov/niem/proxy/xsd/2.0" />
+  <xs:complexType name="ExceptionElementType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://niem.gov/niem/structures/2.0" base="q1:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionElementTagText" type="q2:string" />
+          <xs:element xmlns:q3="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionElementOccurrenceID" type="q3:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExceptionType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://niem.gov/niem/structures/2.0" base="q4:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionID" type="q5:string" />
+          <xs:element xmlns:q6="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionText" type="q6:string" />
+          <xs:element xmlns:q7="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionTypeCode" type="q7:string" />
+          <xs:element xmlns:q8="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionSevereIndicator" type="q8:boolean" />
+          <xs:element xmlns:q9="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionCategoryCode" type="q9:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ExceptionElement" type="tns:ExceptionElementType" />
+          <xs:element xmlns:q10="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="unbounded" name="ExceptionObjectText" type="q10:string" />
+          <xs:element xmlns:q11="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="ExceptionActorText" type="q11:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:ExceptionType" />
+</xs:schema>

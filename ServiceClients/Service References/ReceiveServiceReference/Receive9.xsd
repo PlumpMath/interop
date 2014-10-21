@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://niem.gov/niem/ansi_d20/2.0" elementFormDefault="qualified" targetNamespace="http://niem.gov/niem/ansi_d20/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="VehicleOdometerReadingUnitCodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:token" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="BrandDamagePercentageCategoryCodeType">
+    <xs:simpleContent>
+      <xs:extension base="tns:BrandDamagePercentageCategoryCodeSimpleType" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BrandDamagePercentageCategoryCodeSimpleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="R" />
+      <xs:enumeration value="T" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BrandCodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:token" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VehicleFuelCategoryCodeType">
+    <xs:simpleContent>
+      <xs:extension base="tns:VehicleFuelCategoryCodeSimpleType" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VehicleFuelCategoryCodeSimpleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A" />
+      <xs:enumeration value="C" />
+      <xs:enumeration value="D" />
+      <xs:enumeration value="E" />
+      <xs:enumeration value="G" />
+      <xs:enumeration value="H" />
+      <xs:enumeration value="K" />
+      <xs:enumeration value="L" />
+      <xs:enumeration value="N" />
+      <xs:enumeration value="O" />
+      <xs:enumeration value="S" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehicleUseCodeType">
+    <xs:simpleContent>
+      <xs:extension base="tns:VehicleUseCodeSimpleType" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VehicleUseCodeSimpleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="00" />
+      <xs:enumeration value="01" />
+      <xs:enumeration value="02" />
+      <xs:enumeration value="03" />
+      <xs:enumeration value="04" />
+      <xs:enumeration value="05" />
+      <xs:enumeration value="06" />
+      <xs:enumeration value="07" />
+      <xs:enumeration value="08" />
+      <xs:enumeration value="09" />
+      <xs:enumeration value="10" />
+      <xs:enumeration value="11" />
+      <xs:enumeration value="12" />
+      <xs:enumeration value="13" />
+      <xs:enumeration value="97" />
+      <xs:enumeration value="99" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehicleTitleDocumentCategoryCodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:token" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TitleStatusCodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:token" />
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

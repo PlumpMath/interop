@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://niem.gov/niem/niem-core/2.0" elementFormDefault="qualified" targetNamespace="http://niem.gov/niem/niem-core/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd4" namespace="http://niem.gov/niem/proxy/xsd/2.0" />
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd2" namespace="http://niem.gov/niem/structures/2.0" />
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd7" namespace="http://niem.gov/niem/ansi_d20/2.0" />
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd8" namespace="http://niem.gov/niem/fbi/2.0" />
+  <xs:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd10" namespace="http://niem.gov/niem/usps_states/2.0" />
+  <xs:complexType name="TextType">
+    <xs:simpleContent>
+      <xs:extension xmlns:q1="http://niem.gov/niem/proxy/xsd/2.0" base="q1:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ProperNameTextType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TextType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonNameTextType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProperNameTextType">
+        <xs:attribute form="qualified" name="personNameInitialIndicator" type="xs:boolean" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VehicleIdentification" type="tns:IdentificationType" />
+  <xs:complexType name="IdentificationType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://niem.gov/niem/structures/2.0" base="q2:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="IdentificationID" type="q3:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TitleIdentification" type="tns:IdentificationType" />
+  <xs:element name="TitleIssuingAuthorityName" type="tns:TextType" />
+  <xs:element xmlns:q4="http://niem.gov/niem/ansi_d20/2.0" name="VehicleOdometerReadingUnitCode" type="q4:VehicleOdometerReadingUnitCodeType" />
+  <xs:element xmlns:q5="http://niem.gov/niem/fbi/2.0" name="VehicleMakeCode" type="q5:VMACodeType" />
+  <xs:element xmlns:q6="http://niem.gov/niem/proxy/xsd/2.0" name="ItemModelYearDate" type="q6:gYear" />
+  <xs:element name="PersonName" type="tns:PersonNameType" />
+  <xs:complexType name="PersonNameType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://niem.gov/niem/structures/2.0" base="q7:ComplexObjectType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="PersonGivenName" type="tns:PersonNameTextType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PersonMiddleName" type="tns:PersonNameTextType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PersonSurName" type="tns:PersonNameTextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AmountType">
+    <xs:simpleContent>
+      <xs:extension xmlns:q8="http://niem.gov/niem/proxy/xsd/2.0" base="q8:decimal" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="NumericType">
+    <xs:simpleContent>
+      <xs:extension xmlns:q9="http://niem.gov/niem/proxy/xsd/2.0" base="q9:decimal" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="QuantityType">
+    <xs:simpleContent>
+      <xs:extension base="tns:NumericType" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element xmlns:q10="http://niem.gov/niem/ansi_d20/2.0" name="VehicleBrandDamagePercentageCategoryCode" type="q10:BrandDamagePercentageCategoryCodeType" />
+  <xs:element xmlns:q11="http://niem.gov/niem/ansi_d20/2.0" name="VehicleBrandCode" type="q11:BrandCodeType" />
+  <xs:element name="StreetFullText" type="tns:TextType" />
+  <xs:element name="LocationCityName" type="tns:ProperNameTextType" />
+  <xs:element xmlns:q12="http://niem.gov/niem/usps_states/2.0" name="LocationStateUSPostalServiceCode" type="q12:USStateCodeType" />
+  <xs:element xmlns:q13="http://niem.gov/niem/proxy/xsd/2.0" name="LocationPostalCode" type="q13:string" />
+  <xs:element xmlns:q14="http://niem.gov/niem/proxy/xsd/2.0" name="IdentificationID" type="q14:string" />
+  <xs:element xmlns:q15="http://niem.gov/niem/proxy/xsd/2.0" name="TelephoneNumberFullID" type="q15:string" />
+  <xs:element xmlns:q16="http://niem.gov/niem/proxy/xsd/2.0" name="ContactEmailID" type="q16:string" />
+  <xs:element xmlns:q17="http://niem.gov/niem/fbi/2.0" name="VehicleModelCode" type="q17:VMOCodeType" />
+  <xs:element xmlns:q18="http://niem.gov/niem/fbi/2.0" name="VehicleStyleCode" type="q18:VSTCodeType" />
+  <xs:element name="VehicleVINAText" type="tns:TextType" />
+  <xs:element name="ItemModelName" type="tns:ProperNameTextType" />
+  <xs:element xmlns:q19="http://niem.gov/niem/fbi/2.0" name="VehicleColorPrimaryCode" type="q19:VCOCodeType" />
+  <xs:element xmlns:q20="http://niem.gov/niem/fbi/2.0" name="VehicleColorSecondaryCode" type="q20:VCOCodeType" />
+  <xs:element xmlns:q21="http://niem.gov/niem/proxy/xsd/2.0" name="ItemLeaseIndicator" type="q21:boolean" />
+  <xs:element xmlns:q22="http://niem.gov/niem/proxy/xsd/2.0" name="ItemRentalIndicator" type="q22:boolean" />
+  <xs:element xmlns:q23="http://niem.gov/niem/ansi_d20/2.0" name="ConveyanceFuelCategoryCode" type="q23:VehicleFuelCategoryCodeType" />
+  <xs:element xmlns:q24="http://niem.gov/niem/ansi_d20/2.0" name="VehicleUseCode" type="q24:VehicleUseCodeType" />
+  <xs:element xmlns:q25="http://niem.gov/niem/proxy/xsd/2.0" name="EngineCylinderQuantity" type="q25:nonNegativeInteger" />
+  <xs:element xmlns:q26="http://niem.gov/niem/proxy/xsd/2.0" name="VehicleDoorQuantity" type="q26:nonNegativeInteger" />
+  <xs:element xmlns:q27="http://niem.gov/niem/proxy/xsd/2.0" name="ItemOwnerAppliedID" type="q27:string" />
+  <xs:element xmlns:q28="http://niem.gov/niem/proxy/xsd/2.0" name="VehicleAxleQuantity" type="q28:nonNegativeInteger" />
+  <xs:element name="VehicleBrandSalvagePercentage" type="tns:PercentageType" />
+  <xs:complexType name="PercentageType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="VehicleBranderIdentification" type="tns:IdentificationType" />
+  <xs:element xmlns:q29="http://niem.gov/niem/ansi_d20/2.0" name="ItemTitleDocumentCategoryCode" type="q29:VehicleTitleDocumentCategoryCodeType" />
+  <xs:element xmlns:q30="http://niem.gov/niem/ansi_d20/2.0" name="TitleStatusCode" type="q30:TitleStatusCodeType" />
+  <xs:element name="LienAmount" type="tns:AmountType" />
+  <xs:element name="LienDate" type="tns:DateType" />
+  <xs:complexType name="DateType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://niem.gov/niem/structures/2.0" base="q31:ComplexObjectType">
+        <xs:sequence>
+          <xs:element xmlns:q32="http://niem.gov/niem/proxy/xsd/2.0" minOccurs="0" maxOccurs="1" name="Date" type="q32:date" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

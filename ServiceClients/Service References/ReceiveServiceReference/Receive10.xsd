@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://niem.gov/niem/fbi/2.0" elementFormDefault="qualified" targetNamespace="http://niem.gov/niem/fbi/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="VMACodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:token" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VMOCodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:token" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VSTCodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:token" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VCOCodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:token" />
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

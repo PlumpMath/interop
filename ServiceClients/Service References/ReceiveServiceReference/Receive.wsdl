@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="AAMVA.NMVTIS" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="AAMVA.NMVTIS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="AAMVA.NMVTIS/Imports">
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd0" namespace="AAMVA.NMVTIS" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd1" namespace="http://aamva.org/xsd/nmvtis/exchange/pvhi/3.1" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd2" namespace="http://niem.gov/niem/structures/2.0" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd3" namespace="http://aamva.org/xsd/aamva/exception/1.0" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd4" namespace="http://niem.gov/niem/proxy/xsd/2.0" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd5" namespace="http://niem.gov/niem/niem-core/2.0" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd6" namespace="http://aamva.org/xsd/aamva/extensionsExt/1.0" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd7" namespace="http://niem.gov/niem/ansi_d20/2.0" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd8" namespace="http://niem.gov/niem/fbi/2.0" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd9" namespace="http://aamva.org/xsd/nmvtis/exchange/puvi/2.3" />
+      <xsd:import schemaLocation="http://localhost:12536/VehicleSystems/NMVTIS/NmvtisReceiveResponses/Receive?xsd=xsd10" namespace="http://niem.gov/niem/usps_states/2.0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INmvtisReceiveResponses_VehicleHistoryInquiryResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleHistoryInquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="INmvtisReceiveResponses_VehicleHistoryInquiryResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleHistoryInquiryResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="INmvtisReceiveResponses_UsedVehicleInquiryResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:UsedVehicleInquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="INmvtisReceiveResponses_UsedVehicleInquiryResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsedVehicleInquiryResponseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INmvtisReceiveResponses">
+    <wsdl:operation name="VehicleHistoryInquiryResponse">
+      <wsdl:input wsaw:Action="AAMVA.NMVTIS/INmvtisReceiveResponses/VehicleHistoryInquiryResponse" message="tns:INmvtisReceiveResponses_VehicleHistoryInquiryResponse_InputMessage" />
+      <wsdl:output wsaw:Action="AAMVA.NMVTIS/INmvtisReceiveResponses/VehicleHistoryInquiryResponseResponse" message="tns:INmvtisReceiveResponses_VehicleHistoryInquiryResponse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UsedVehicleInquiryResponse">
+      <wsdl:input wsaw:Action="AAMVA.NMVTIS/INmvtisReceiveResponses/UsedVehicleInquiryResponse" message="tns:INmvtisReceiveResponses_UsedVehicleInquiryResponse_InputMessage" />
+      <wsdl:output wsaw:Action="AAMVA.NMVTIS/INmvtisReceiveResponses/UsedVehicleInquiryResponseResponse" message="tns:INmvtisReceiveResponses_UsedVehicleInquiryResponse_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
